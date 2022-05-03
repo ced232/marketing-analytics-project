@@ -183,6 +183,10 @@ docs/
 # translation temp files
 po/*~
 
+# renv
+renv/
+.Rprofile
+
 
 # -----
 # other
