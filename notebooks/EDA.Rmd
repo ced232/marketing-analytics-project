@@ -1,0 +1,24 @@
+
+Packages:
+
+```{r}
+library(dplyr)
+library(DBI)
+```
+
+Retrieve data from database:
+
+```{r}
+con <- dbConnect(RMySQL::MySQL(),
+                 dbname=Sys.getenv("dbname"),
+                 host=Sys.getenv("host"),
+                 port=as.integer(Sys.getenv("port")),
+                 user=Sys.getenv("user"),
+                 password=Sys.getenv("password"))
+
+bank <- dbReadTable(con, "bank_train")
+
+dbDisconnect(con)
+```
+
+
