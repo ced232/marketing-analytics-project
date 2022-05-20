@@ -11,6 +11,8 @@ from sklearn.model_selection import train_test_split
 
 data = pd.read_csv('../data/bank.csv', sep=';')
 
+data = data.drop('duration', 1)
+
 train, test = train_test_split(data, test_size=.2, random_state=42)
 
 train.to_csv('../data/bank_train.csv', index=False)
